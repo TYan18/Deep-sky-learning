@@ -16,9 +16,11 @@ Up until recently, astronomers didn't have much choice but to manually look thro
 
 ## What's in this repo
 
-This repo contains a pickled dataset of images and labels from the 2013-2014 observing season of the Dark Energy Survey, originally extracted from the [Autoscan project](https://portal.nersc.gov/project/dessn/autoscan/). Further data can be found directly from this website. Here, only the data from 2014 is provided.
+The code in this repo uses a pickled dataset of images and labels from the 2013-2014 observing season of the Dark Energy Survey previously explored by the [Autoscan project](https://portal.nersc.gov/project/dessn/autoscan/), as well as a csv file of engineered features and labels of the previously explored dataset. All of the data can be found directly from the Autoscan website. The images have been uploaded in eleven batches due to their large sizes; for this project, only the first batch ("Chunk 0") was used. These images involve an initial extraction ("untarring") from their .tar format, and further extraction in Python to capture the 51 x 51 arrays, which each represent one image. The three channels used were the search, template, and differenced images; only the images in .fits files were used.
 
-The file "CNN_classifier.ipynb" contains the code for unpickling and fitting the data to a simple CNN model architecture. It shows that although the accuracy, precision, and recall were subpar in the simple model, large increases in these performance metrics were obtained by applying a transfer learning method.
+The file "XGBoost_autoscan.ipynb" contains the code for a baseline XGBoost model for predicting the labels of the images with the feature-engineered data from the Autoscan project.
+
+The file "CNN_classifier.ipynb" contains the code for processing, storing, and fitting the data to a simple CNN model architecture. It shows that although the accuracy, precision, and recall were subpar in the simple model, large increases in these performance metrics were obtained by applying a transfer learning method. Here, only data from 2014 was used.
 
 ## Acknowledgements
 
